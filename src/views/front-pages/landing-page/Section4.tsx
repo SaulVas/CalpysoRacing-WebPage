@@ -122,7 +122,7 @@ function Section4() {
                   <div className="relative w-full h-[200px]">
                     <img
                       src={"/images/podium.jpg"}
-                      alt="Seb Side Eye"
+                      alt="rmsr podium"
                       className="w-full h-full object-cover rounded-[5px]"
                     />
                   </div>

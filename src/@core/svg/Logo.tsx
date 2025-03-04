@@ -1,7 +1,7 @@
 // React Imports
 import type { SVGAttributes } from "react";
 
-const Logo = (props: SVGAttributes<SVGElement>) => {
+const CalypsoLogo = (props: SVGAttributes<SVGElement>) => {
   return (
     <svg
       width="50"
@@ -32,4 +32,4 @@ const Logo = (props: SVGAttributes<SVGElement>) => {
   );
 };
 
-export default Logo;
+export default CalypsoLogo;
