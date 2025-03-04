@@ -1,0 +1,97 @@
+.heroSectionBg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  inline-size: 100%;
+  inset-block-start: -12%;
+  pointer-events: none;
+  z-index: 0;
+  border-end-start-radius: 1.5rem;
+  border-end-end-radius: 1.5rem;
+  &.bgLight {
+    background: linear-gradient(138.18deg, #eae8fd 0%, #fce5e6 94.44%);
+  }
+  &.bgDark {
+    background: var(--mui-palette-background-default);
+  }
+}
+
+.heroSecDashboard {
+  inline-size: 100%;
+}
+
+.heroSectionElements {
+  inset-block-start: 0%;
+  inset-inline-end: 0%;
+  img {
+    inline-size: 100%;
+  }
+}
+
+.heroText {
+  background: linear-gradient(135deg, #28c76f 0%, #5a4aff 47.92%, #ff3739 100%) repeat;
+  background-size: 200% 200%;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  animation: shine 2s ease-in-out infinite alternate;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.teamCard {
+  border-start-start-radius: 90px;
+  border-start-end-radius: 20px;
+}
+
+.contactRadius {
+  border-start-start-radius: 1.5rem;
+  border-start-end-radius: var(--mui-shape-borderRadius);
+  border-end-end-radius: var(--mui-shape-borderRadius);
+  border-end-start-radius: var(--mui-shape-borderRadius);
+}
+
+.sectionStartRadius {
+  position: relative;
+  border-start-start-radius: 1.5rem;
+  border-start-end-radius: 1.5rem;
+  background: var(--mui-palette-background-paper);
+}
+
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.cardsContainer > div {
+  transition: transform 0.3s ease;
+}
+
+.cardsContainer > div:hover {
+  transform: translateY(-10px);
+}
+
+.particles-container {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  background: var(--mui-palette-background-default);
+}

@@ -59,8 +59,8 @@ export type Config = {
 };
 
 const themeConfig: Config = {
-  homePageUrl: "/front-pages/landing-page",
-  settingsCookieName: "calypso-racing-web-page",
+  homePageUrl: "/dashboards/crm",
+  settingsCookieName: "",
   mode: "light", // 'system', 'light', 'dark'
   skin: "default", // 'default', 'bordered'
   semiDark: false, // true, false

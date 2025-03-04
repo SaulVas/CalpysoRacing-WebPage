@@ -4,13 +4,13 @@ const nextConfig = {
   redirects: async () => {
     return [
       {
-        source: '/',
-        destination: '/home',
-        permanent: true,
-        locale: false
-      }
-    ]
-  }
-}
+        source: "/",
+        destination: "/landing-page",
+        permanent: false,
+        basePath: false,
+      },
+    ];
+  },
+};
 
-export default nextConfig
+export default nextConfig;
