@@ -18,14 +18,8 @@ import classnames from "classnames";
 // Next Imports
 import Link from "@/components/Link";
 
-// Type Imports
-import type { Mode } from "@core/types";
-
 // Component Imports
 import Logo from "@components/layout/shared/Logo";
-import ModeDropdown from "@components/layout/shared/ModeDropdown";
-import FrontMenu from "./FrontMenu";
-import CustomIconButton from "@core/components/mui/IconButton";
 
 // Util Imports
 import { frontLayoutClasses } from "@layouts/utils/layoutClasses";
@@ -33,10 +27,7 @@ import { frontLayoutClasses } from "@layouts/utils/layoutClasses";
 // Styles Imports
 import styles from "./styles.module.css";
 
-const Header = ({ mode }: { mode: Mode }) => {
-  // States
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
+const Header = () => {
   // Hooks
   const isBelowLgScreen = useMediaQuery((theme: Theme) =>
     theme.breakpoints.down("lg")
@@ -62,31 +53,18 @@ const Header = ({ mode }: { mode: Mode }) => {
           )}
         >
           {isBelowLgScreen ? (
-            <div className="flex items-center gap-2 sm:gap-4">
+            <div className="flex items-center justify-between gap-2 sm:gap-4">
               <Link href="/">
                 <Logo />
               </Link>
-              <FrontMenu
-                mode={mode}
-                isDrawerOpen={isDrawerOpen}
-                setIsDrawerOpen={setIsDrawerOpen}
-              />
             </div>
           ) : (
-            <div className="flex items-center gap-10">
+            <div className="flex items-center justify-between gap-10">
               <Link href="/">
                 <Logo />
               </Link>
-              <FrontMenu
-                mode={mode}
-                isDrawerOpen={isDrawerOpen}
-                setIsDrawerOpen={setIsDrawerOpen}
-              />
             </div>
           )}
-          <div className="flex items-center gap-2 sm:gap-4">
-            <ModeDropdown />
-          </div>
         </div>
       </div>
     </header>

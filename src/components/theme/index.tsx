@@ -109,7 +109,7 @@ const ThemeProvider = (props: Props) => {
     >
       <CssVarsProvider
         theme={theme}
-        defaultMode={systemMode}
+        defaultMode={"dark"}
         modeStorageKey={`calypso-racing-web-page-mui-template-mode`}
       >
         <>
