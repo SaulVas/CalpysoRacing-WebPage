@@ -85,7 +85,7 @@ function Section2() {
                     <img
                       src={"/images/seb-side-eye.jpg"}
                       alt="Seb Side Eye"
-                      className="w-full h-full object-cover rounded-[5px]"
+                      className="w-full h-full object-cover object-top rounded-[5px]"
                     />
                   </div>
                 </div>
@@ -101,7 +101,7 @@ function Section2() {
                     <img
                       src={"/images/seb-side-eye.jpg"}
                       alt="Seb Side Eye"
-                      className="w-full h-full object-cover rounded-[5px]"
+                      className="w-full h-full object-cover object-top rounded-[5px]"
                     />
                   </div>
                   <div className="flex flex-col items-center justify-center gap-2 w-2/3">

@@ -24,6 +24,7 @@ import { frontLayoutClasses } from "@layouts/utils/layoutClasses";
 // Styles Imports
 import frontCommonStyles from "@views/front-pages/styles.module.css";
 import useVerticalNav from "@menu/hooks/useVerticalNav";
+import InstagramIcon from "@mui/icons-material/Instagram";
 
 const Footer = ({ mode }: { mode: Mode }) => {
   // Vars
@@ -55,16 +56,11 @@ const Footer = ({ mode }: { mode: Mode }) => {
         frontLayoutClasses.footer
       )}
     >
-      <div>
-        <img
-          src={dashboardImage}
-          alt="footer bg"
-          className="absolute inset-0 is-full bs-full object-cover -z-[1]"
-        />
+      <div className="bg-[#211B2C]">
         <div className={classnames("plb-6", frontCommonStyles.layoutSpacing)}>
           <Grid container rowSpacing={10} columnSpacing={12}>
-            <Grid item xs={12} lg={8}>
-              <div className="flex flex-col sm:flex-row items-center gap-6">
+            <Grid item xs={12}>
+              <div className="flex flex-col sm:flex-row items-center sm:justify-between gap-6">
                 <Link href="/">
                   <Logo />
                 </Link>
@@ -76,61 +72,22 @@ const Footer = ({ mode }: { mode: Mode }) => {
                     opacity: theme.palette.mode === "dark" ? 0.78 : 0.87,
                   }}
                 >
-                  Making tutoring affordable for students and rewarding for
-                  tutors.
+                  Pushing the boundaries of offshore racing.
                 </Typography>
-              </div>
-            </Grid>
-            <Grid item xs={12} lg={4}>
-              <div className="flex flex-row gap-4">
-                {["Home", "Features", "Team", "FAQ", "Contact Us"].map(
-                  (item, index) => (
-                    <Typography
-                      key={index}
-                      component={Link}
-                      href={`#${item.toLowerCase().replace(" ", "-")}`}
-                      sx={{
-                        color: logoColor,
-                        opacity: theme.palette.mode === "dark" ? 0.78 : 0.87,
-                      }}
-                    >
-                      {item}
-                    </Typography>
-                  )
-                )}
+                <p className="text-white text-[13px]">
+                  <span>{"© All images are property of Alex Turnbull"}</span>
+                </p>
+                <a
+                  href="https://www.instagram.com/calypso_racing/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-gray-300 transition-colors flex items-center justify-center"
+                >
+                  <InstagramIcon fontSize="medium" />
+                </a>
               </div>
             </Grid>
           </Grid>
-        </div>
-      </div>
-      <div className="bg-[#211B2C]">
-        <div
-          className={classnames(
-            "flex flex-wrap items-center justify-center sm:justify-between gap-4 plb-[15px]",
-            frontCommonStyles.layoutSpacing
-          )}
-        >
-          <p className="text-white text-[13px]">
-            <span>{"© All images are property of Alex Turnbull"}</span>
-          </p>
-          {!isBreakpointReached && (
-            <div className="flex items-center gap-4">
-              <Link
-                href="/pages/misc/terms-of-service"
-                target="_blank"
-                className="text-primary"
-              >
-                Terms of Service
-              </Link>
-              <Link
-                href="/pages/misc/privacy-policy"
-                target="_blank"
-                className="text-primary"
-              >
-                Privacy Policy
-              </Link>
-            </div>
-          )}
         </div>
       </div>
     </footer>

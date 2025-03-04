@@ -1,104 +1,126 @@
 // Third-party Imports
-import 'react-perfect-scrollbar/dist/css/styles.css'
+import "react-perfect-scrollbar/dist/css/styles.css";
 
 // Type Imports
-import type { ChildrenType } from '@core/types'
+import type { ChildrenType } from "@core/types";
 
 // Context Imports
-import { IntersectionProvider } from '@/contexts/intersectionContext'
+import { IntersectionProvider } from "@/contexts/intersectionContext";
 
 // Component Imports
-import Providers from '@components/Providers'
+import Providers from "@components/Providers";
 
-import BlankLayout from '@layouts/BlankLayout'
+import BlankLayout from "@layouts/BlankLayout";
 
-import FrontLayout from '@components/layout/front-pages'
+import FrontLayout from "@components/layout/front-pages";
 
 // Util Imports
-import { getSystemMode } from '@core/utils/serverHelpers'
+import { getSystemMode } from "@core/utils/serverHelpers";
 
 // Style Imports
-import '@/app/globals.css'
+import "@/app/globals.css";
 
 // Generated Icon CSS Imports
-import '@assets/iconify-icons/generated-icons.css'
+import "@assets/iconify-icons/generated-icons.css";
 
 export const metadata = {
-  metadataBase: new URL('https://thestudyhub.nl'),
+  metadataBase: new URL("https://calypso-racing.com"),
   alternates: {
-    canonical: 'https://thestudyhub.nl',
+    canonical: "https://calypso-racing.com",
     languages: {
-      'en-US': '/en-US',
-      'en-GB': '/en-GB',
+      "en-US": "/en-US",
+      "en-GB": "/en-GB",
+      mt: "/mt",
     },
   },
-  authors: [{ name: 'The Study Hub Team' }],
-  category: 'Education',
+  authors: [{ name: "Saul Vassallo" }],
+  category: "Sports",
   keywords: [
-    'university tutoring',
-    'online education',
-    'course-specific tutoring',
-    'academic support',
-    'university courses',
-    'expert tutors',
-    'student success',
-    'academic excellence',
-    'flexible learning',
-    'personalized tutoring'
+    "offshore racing",
+    "sailing malta",
+    "600nm races",
+    "mediterranean sailing",
+    "mumm 30",
+    "farr design",
+    "royal malta yacht club",
+    "rmyc",
+    "calypso racing",
+    "calypso racing team",
+    "calypso",
+    "RMYC",
+    "rolex middle sea race",
+    "rmsr",
+    "msr",
+    "malta racing team",
+    "offshore sailing",
+    "sail racing",
+    "competitive sailing",
+    "offshore regattas",
+    "mumm 30 racing yachts",
+    "mumm 30 racing yacht",
+    "mumm 30 racing",
+    "mumm 30",
   ],
-  creator: 'The Study Hub',
-  publisher: 'The Study Hub',
+  creator: "Saul Vassallo",
+  publisher: "Calypso Racing",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-}
+};
 
 // Add structured data for the organization
 const organizationJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'EducationalOrganization',
-  name: 'The Study Hub',
-  url: 'https://thestudyhub.nl',
-  logo: '/images/logo.png',
-  sameAs: [
-    'https://www.instagram.com/studyhub_official',
-    'https://www.linkedin.com/company/103106120'
-  ],
-  description: 'Course-specific tutoring platform connecting students with tutors who took the exact same university courses. Specializing in Dutch universities with focus on Maastricht University and other institutions in the Netherlands.',
-  areaServed: {
-    '@type': 'Country',
-    name: 'Netherlands'
+  "@context": "https://schema.org",
+  "@type": "SportsTeam",
+  name: "Calypso Racing",
+  url: "https://calypso-racing.com",
+  logo: "/images/logo.png",
+  sameAs: ["https://www.instagram.com/calypso_racing"],
+  description:
+    "Professional sailing team specializing in 600nm offshore races in the Mediterranean. Based at the Royal Malta Yacht Club (RMYC), racing a modified Mumm 30 sailing yacht.",
+  memberOf: {
+    "@type": "SportsOrganization",
+    name: "Royal Malta Yacht Club",
+    url: "https://rmyc.org",
   },
-  address: {
-    '@type': 'PostalAddress',
-    addressCountry: 'Netherlands',
-    addressRegion: 'Limburg',
-    addressLocality: 'Maastricht'
+  homeLocation: {
+    "@type": "Place",
+    name: "Royal Malta Yacht Club",
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: "Malta",
+      addressLocality: "Ta' Xbiex",
+      streetAddress: "Ta' Xbiex Seafront",
+    },
   },
+  sport: "Sailing",
   knowsAbout: [
-    'Course-Specific University Tutoring',
-    'Dutch Higher Education',
-    'University Course Support',
-    'Academic Tutoring Netherlands'
-  ]
-}
+    "Offshore Yacht Racing",
+    "Mediterranean Sailing Routes",
+    "Mumm 30 Racing Yachts",
+    "Farr Yacht Design",
+    "600nm Offshore Competitions",
+  ],
+};
 
 const RootLayout = ({ children }: ChildrenType) => {
   // Vars
-  const systemMode = getSystemMode()
-  const direction = 'ltr'
+  const systemMode = getSystemMode();
+  const direction = "ltr";
 
   return (
-    <html id='__next' lang='en' dir={direction}>
+    <html id="__next" lang="en" dir={direction}>
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
         />
       </head>
-      <body className='flex is-full min-bs-full flex-auto flex-col'>
+      <body className="flex is-full min-bs-full flex-auto flex-col">
         <Providers direction={direction}>
           <BlankLayout systemMode={systemMode}>
             <IntersectionProvider>
@@ -108,7 +130,7 @@ const RootLayout = ({ children }: ChildrenType) => {
         </Providers>
       </body>
     </html>
-  )
-}
+  );
+};
 
-export default RootLayout
+export default RootLayout;

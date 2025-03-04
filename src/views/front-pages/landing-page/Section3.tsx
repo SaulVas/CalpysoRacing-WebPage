@@ -1,5 +1,5 @@
 // React Imports
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // MUI Imports
 import Typography from "@mui/material/Typography";
@@ -22,27 +22,28 @@ import styles from "./styles.module.css";
 import frontCommonStyles from "@views/front-pages/styles.module.css";
 
 // Data
-// const galleryImages = [
-//   "/images/gallery/image1.jpg",
-//   "/images/gallery/image2.jpg",
-//   "/images/gallery/image3.jpg",
-//   "/images/gallery/image4.jpg",
-//   "/images/gallery/image5.jpg",
-//   "/images/gallery/image6.jpg",
-//   "/images/gallery/image7.jpg",
-//   "/images/gallery/image8.jpg",
-//   "/images/gallery/image9.jpg",
-//   "/images/gallery/image10.jpg",
-//   "/images/gallery/image11.jpg",
-//   "/images/gallery/image12.jpg",
-//   // Additional images for the full gallery
-//   "/images/gallery/image13.jpg",
-//   "/images/gallery/image14.jpg",
-//   "/images/gallery/image15.jpg",
-//   "/images/gallery/image16.jpg",
-// ];
+const galleryPreviewImages = [
+  "/images/gallery_preview/image1.jpg",
+  "/images/gallery_preview/image2.jpg",
+  "/images/gallery_preview/image3.jpg",
+  "/images/gallery_preview/image4.jpg",
+  "/images/gallery_preview/image5.jpg",
+  "/images/gallery_preview/image6.jpg",
+];
 
-const galleryImages = Array(12).fill("/images/gallery/img1.jpg");
+// Helper function to shuffle array
+const shuffleArray = (array: string[]) => {
+  // Create a copy of the array to avoid mutating the original
+  const shuffled = [...array];
+
+  // Fisher-Yates shuffle algorithm
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+
+  return shuffled;
+};
 
 const Section3 = () => {
   // Refs
@@ -53,6 +54,13 @@ const Section3 = () => {
   const { updateIntersections } = useIntersection();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+  // Shuffle images on component mount
+  const [shuffledImages, setShuffledImages] = useState<string[]>([]);
+
+  useEffect(() => {
+    setShuffledImages(shuffleArray(galleryPreviewImages));
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -72,10 +80,8 @@ const Section3 = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Display only 4 images on mobile, 12 on desktop
-  const displayImages = isMobile
-    ? galleryImages.slice(0, 3)
-    : galleryImages.slice(0, 6);
+  // Display only 3 images on mobile, 6 on desktop
+  const displayImages = isMobile ? shuffledImages.slice(0, 3) : shuffledImages;
 
   return (
     <section
@@ -85,7 +91,7 @@ const Section3 = () => {
     >
       <div
         className={classnames(
-          "flex flex-col gap-12  pbe-[60px]",
+          "flex flex-col gap-12  ",
           frontCommonStyles.layoutSpacing
         )}
       >
@@ -111,12 +117,12 @@ const Section3 = () => {
         <div>
           <Grid container spacing={5}>
             {displayImages.map((image, index) => (
-              <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
-                <div className="relative w-full h-full overflow-hidden rounded-lg shadow-md">
+              <Grid item xs={12} sm={6} md={4} key={index}>
+                <div className="relative w-full h-full overflow-hidden rounded-lg shadow-lg">
                   <img
                     src={image}
                     alt={`Gallery image ${index + 1}`}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 "
                   />
                 </div>
               </Grid>

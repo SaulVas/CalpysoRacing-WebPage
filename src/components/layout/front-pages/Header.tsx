@@ -1,16 +1,12 @@
 "use client";
 
 // React Imports
-import { useState } from "react";
-
-// Next-Auth Imports
-import { useSession } from "next-auth/react";
 
 // MUI Imports
-import Button from "@mui/material/Button";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import type { Theme } from "@mui/material/styles";
+import InstagramIcon from "@mui/icons-material/Instagram";
 
 // Third-party Imports
 import classnames from "classnames";
@@ -53,16 +49,34 @@ const Header = () => {
           )}
         >
           {isBelowLgScreen ? (
-            <div className="flex items-center justify-between gap-2 sm:gap-4">
+            <div className="flex items-center justify-between gap-2 sm:gap-4 w-full">
               <Link href="/">
                 <Logo />
               </Link>
+              <a
+                href="https://www.instagram.com/calypso_racing/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-inherit hover:text-gray-300 transition-colors flex items-center justify-center"
+                aria-label="Instagram"
+              >
+                <InstagramIcon fontSize="medium" />
+              </a>
             </div>
           ) : (
-            <div className="flex items-center justify-between gap-10">
+            <div className="flex items-center justify-between gap-10 w-full">
               <Link href="/">
                 <Logo />
               </Link>
+              <a
+                href="https://www.instagram.com/calypso_racing/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-inherit hover:text-gray-300 transition-colors flex items-center justify-center"
+                aria-label="Instagram"
+              >
+                <InstagramIcon fontSize="medium" />
+              </a>
             </div>
           )}
         </div>

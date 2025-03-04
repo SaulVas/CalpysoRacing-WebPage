@@ -50,17 +50,7 @@ const ThemeProvider = (props: Props) => {
 
   // Vars
   const isServer = typeof window === "undefined";
-  let currentMode: SystemMode;
-
-  if (isServer) {
-    currentMode = systemMode;
-  } else {
-    if (settings.mode === "system") {
-      currentMode = isDark ? "dark" : "light";
-    } else {
-      currentMode = settings.mode as SystemMode;
-    }
-  }
+  let currentMode: SystemMode = "dark";
 
   // Merge the primary color scheme override with the core theme
   const theme = useMemo(() => {
@@ -110,6 +100,7 @@ const ThemeProvider = (props: Props) => {
       <CssVarsProvider
         theme={theme}
         defaultMode={"dark"}
+        disableTransitionOnChange
         modeStorageKey={`calypso-racing-web-page-mui-template-mode`}
       >
         <>

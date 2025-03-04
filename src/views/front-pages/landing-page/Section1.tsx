@@ -5,6 +5,7 @@ import type { Theme } from "@mui/material/styles";
 
 // Third-party Imports
 import classnames from "classnames";
+import { useEffect, useState } from "react";
 
 // schemas
 import Image from "next/image";
@@ -14,6 +15,17 @@ const Section1 = () => {
   const isSmallScreen = useMediaQuery((theme: Theme) =>
     theme.breakpoints.down("md")
   );
+  const isMobileScreen = useMediaQuery("(max-width:500px)");
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    // Trigger animation after component mounts
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 300);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <section id="home" className="relative w-full">
@@ -22,7 +34,7 @@ const Section1 = () => {
         <div className="absolute inset-0 w-full h-full">
           <Image
             src={
-              isSmallScreen
+              isMobileScreen
                 ? "/images/vlt-finish-mobile.jpg"
                 : "/images/vlt-finish.jpg"
             }
@@ -48,13 +60,25 @@ const Section1 = () => {
           )}
         >
           <Typography
-            className="font-extrabold text-4xl md:text-5xl mb-4 text-white"
+            className={classnames(
+              "font-extrabold text-4xl md:text-5xl mb-4 text-white transition-all duration-1000 transform",
+              isVisible
+                ? "translate-y-0 opacity-100"
+                : "translate-y-10 opacity-0"
+            )}
             component="h1"
           >
             Calypso Racing
           </Typography>
-          <Typography className="font-medium text-lg text-white">
-            Pushing a renovated 1997 Mumm 30 to it's limits offshore.
+          <Typography
+            className={classnames(
+              "font-medium text-lg text-white transition-all duration-1000 delay-300 transform",
+              isVisible
+                ? "translate-y-0 opacity-100"
+                : "translate-y-10 opacity-0"
+            )}
+          >
+            Pushing a modified Mumm 30 born in 1997 to it's limits offshore.
           </Typography>
         </div>
       </div>

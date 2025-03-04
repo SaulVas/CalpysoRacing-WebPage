@@ -8,17 +8,17 @@
   inline-size: 100%;
   pointer-events: none;
   margin-top: 0;
-  margin-bottom: -18%; /* Default for small screens - makes the header overlay content below it */
+  margin-bottom: -23%; /* Default for small screens - makes the header overlay content below it */
 
   /* Large screen adjustment */
   @media (min-width: 900px) {
-    margin-bottom: -10%; /* Reduced overlay for large screens */
+    margin-bottom: -12%; /* Reduced overlay for large screens */
   }
   @media (min-width: 1100px) {
-    margin-bottom: -7%; /* Reduced overlay for large screens */
+    margin-bottom: -10%; /* Reduced overlay for large screens */
   }
   @media (min-width: 1200px) {
-    margin-bottom: -5%; /* Reduced overlay for large screens */
+    margin-bottom: -10%; /* Reduced overlay for large screens */
   }
 
   &:before {
