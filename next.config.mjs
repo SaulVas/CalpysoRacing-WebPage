@@ -5,7 +5,7 @@ const nextConfig = {
     return [
       {
         source: "/",
-        destination: "/landing-page",
+        destination: "/home",
         permanent: false,
         basePath: false,
       },
