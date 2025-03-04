@@ -1,13 +1,12 @@
 // Component Imports
-import LayoutFooter from '@layouts/components/horizontal/Footer'
-import FooterContent from './FooterContent'
+import LayoutFooter from "@layouts/components/horizontal/Footer";
 
 const Footer = () => {
   return (
     <LayoutFooter>
-      <FooterContent />
+      <></>
     </LayoutFooter>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
