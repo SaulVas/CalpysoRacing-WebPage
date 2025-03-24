@@ -72,10 +72,10 @@ function Section2() {
                       competition from offshore sailing. Our aim is to keep
                       racing at the highest level possible, whilst also managing
                       other aspects of life…family, career etc. We are not pro
-                      sailors but we’re not amateurs either. We’re busy with
-                      other life adventures, but the sea keeps calling us back,
-                      and from time to time, we disconnect from our hectic lives
-                      and come back to water.
+                      sailors but ’re not amateurs either. We’re busy with other
+                      life adventures, but the sea keeps calling us back, and
+                      from time to time, we disconnect from our hectic lives and
+                      come back to water.
                     </Typography>
                     <Typography variant="body1" className="mb-6">
                       The aim of Calypso Racing is to operate an affordable but
@@ -126,17 +126,31 @@ function Section2() {
                       Our Mission
                     </Typography>
                     <Typography variant="body1" className="mb-4">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Nullam in dui mauris. Vivamus hendrerit arcu sed erat
-                      molestie vehicula. Sed auctor neque eu tellus rhoncus ut
-                      eleifend nibh porttitor. Ut in nulla enim.
+                      Calypso is a team of sailors who are seeking adventure and
+                      competition from offshore sailing. Our aim is to keep
+                      racing at the highest level possible, whilst also managing
+                      other aspects of life…family, career etc. We are not pro
+                      sailors but ’re not amateurs either. We’re busy with other
+                      life adventures, but the sea keeps calling us back, and
+                      from time to time, we disconnect from our hectic lives and
+                      come back to water.
                     </Typography>
-                    <Typography variant="body1">
-                      Suspendisse in justo eu magna luctus suscipit. Sed lectus.
-                      Integer euismod lacus luctus magna. Quisque cursus, metus
-                      vitae pharetra auctor, sem massa mattis sem, at interdum
-                      magna augue eget diam. Vestibulum ante ipsum primis in
-                      faucibus.
+                    <Typography variant="body1" className="mb-6">
+                      The aim of Calypso Racing is to operate an affordable but
+                      competitive and exciting offshore sailing campaign. We
+                      have our sights set on winning the Rolex Middle Sea Race
+                      and other Mediterranean races too. To achieve our goals,
+                      we look for a boat that is: exciting to sail (planes
+                      downwind), optimised for IRC performance, and rewards
+                      technical sailing. We are not optimising for comfort, in
+                      fact, the less comfortable the better!
+                    </Typography>
+                    <Typography variant="body1" className="mb-6">
+                      If the Calypso spirit resonates with you, follow us on
+                      socials! If you as an individual or a team are interested
+                      in more than that, why not consider chartering our boat
+                      for a race or regatta, either bareboat or with a crew?
+                      Either way, we’d be happy to hear from you.
                     </Typography>
                   </div>
                 </div>
